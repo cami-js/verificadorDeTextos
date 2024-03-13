@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mensaje {
+            display: none;
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="textoInput" placeholder="Ingresar texto">
+<button onclick="verificarTexto()">:]</button>
+
+<div id="mensaje">Escriba un texto</div>
+
+<script>
+    function verificarTexto() {
+        let textoInput = document.getElementById("textoInput").value.trim();
+
+        if (textoInput === '') {
+            document.getElementById("mensaje").style.display = 'block';
+        } else {
+            alert('Texto ingresado: '+ textoInput);
+            console.log("Texto cargado: ", textoInput);
+        }
+
+    }
+
+    document.getElementById("textoInput").addEventListener("focus", function() {
+        document.getElementById("mensaje").style.display = 'none';
+    })
+
+</script>
+</body>
+</html>
